@@ -41,5 +41,25 @@ namespace klasyiobiekty.przykladyklas
         {
             return DateTime.Now - publicationDate;
         }
+
+        public void addLanguage(string language)
+        {
+            languages.Add(language);
+        }
+        public void addLanguages(List<string> languages)
+        {
+            this.languages.AddRange(languages);
+        }
+        public void removeLanguage(string language)
+        {
+            languages.Remove(language);
+        }
+        public void removeLanguages(List<string> languages)
+        {
+            foreach(string language in languages)
+            {
+                languages.Remove(language);
+            }
+        }
     }
 }
