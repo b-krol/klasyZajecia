@@ -10,12 +10,21 @@ namespace klasyiobiekty.przykladyklas
     {
         private string? narodowosc;
         private string imie, nazwisko;
-        private DateTime dtUrodzenia;
         private char? plec;
+        public DateTime dtUrodzenia
+        {
+            get { return dtUrodzenia; }
+            set
+            {
+                if (value > DateTime.Now)
+                    dtUrodzenia = DateTime.Now;
+                else dtUrodzenia = value; 
+            }
+        }
         
 
         //konstruktor
-        public Osoba(string imie, string nazwisko, string narodowosc, DateTime dtUrodzenia, char plec)
+        public Osoba(string imie, string nazwisko, string narodowosc, DateTime dtUrodzenia, char? plec)
         {
             this.imie = imie;
             this.nazwisko = nazwisko;
